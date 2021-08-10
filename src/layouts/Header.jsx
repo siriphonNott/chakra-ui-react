@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Image, Flex, Text, Spacer } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-import ViteLogo from '@assets/images/vite-logo.svg'
-import { css } from '@emotion/css'
 import styled from '@emotion/styled'
 import { Badge } from '@components'
+import { css } from '@emotion/css'
+import { Link } from 'react-router-dom'
+import { Box, Image, Flex, Text, Spacer } from '@chakra-ui/react'
+import ChakraLogo from '@assets/images/chakra-logo.svg'
 
 export default function Header() {
   const iconStyle = {
@@ -19,8 +19,8 @@ export default function Header() {
         <NavItem>
           <Link to="/">
             <Flex>
-              <Image mr={2} boxSize={5} src={ViteLogo} alt="Segun Adebayo" />
-              <Text>Vite + React + Tailwindcss</Text>
+              <Image mr={2} h={6} src={ChakraLogo} alt="Segun Adebayo" />
+              <Text></Text>
             </Flex>
           </Link>
         </NavItem>
