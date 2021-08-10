@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "checkJs": false,
+    "baseUrl": "./src",
+    "jsx": "react",
+    "paths": {
+      "@app/*": ["./app/*"],
+      "@assets/*": ["./assets/*"],
+      "@images/*": ["./assets/images/*"],
+      "@components/*": ["./components/*"],
+      "@heplers/*": ["./heplers/*"],
+      "@layouts/*": ["./layouts/*"],
+      "@pages/*": ["./pages/*"]
+     }
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": ["node_modules", "**/node_modules/*", "build"]
+}

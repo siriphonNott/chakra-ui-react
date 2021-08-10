@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header, Footer, Sidebar } from '@layouts'
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
+import { Dashboard, Users, Todos, Charts, PageNotFound } from '@pages'
+import { Box } from '@chakra-ui/react'
+import { css } from '@emotion/css'
+import { Breadcrumb } from '@components'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <Header />
+      <Sidebar />
+      <Box ml={190} p={5}>
+        <Box
+          p={8}
+          className={css`
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+          `}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <Box mb={3}>
+            <Breadcrumb />
+          </Box>
+          <Switch>
+            <Route exact path={['/', '/dashboard']} component={Dashboard} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/todos" component={Todos} />
+            <Route exact path="/charts" component={Charts} />
+            <Route path="*" component={PageNotFound} />
+          </Switch>
+        </Box>
+      </Box>
+      <Footer />
+    </Router>
+  )
 }
 
-export default App;
+export default App
