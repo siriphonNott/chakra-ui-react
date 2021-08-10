@@ -15,7 +15,6 @@ import {
 export default function Sidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
-
   return (
     <>
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>

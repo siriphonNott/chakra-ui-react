@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Image, Flex, Text, Spacer } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import ViteLogo from '@assets/images/vite-logo.svg'
 import { css } from '@emotion/css'
 import styled from '@emotion/styled'
@@ -13,13 +14,15 @@ export default function Header() {
     cursor: pointer;
   `
   return (
-    <Box color="white" w="100%" p={3} px={5} bg="gray.800">
+    <Box pos="sticky" top="0" left="0" color="white" w="100%" p={3} px={5} bg="gray.800">
       <Flex align="center" justify="between">
         <NavItem>
-          <Flex>
-            <Image mr={2} boxSize={5} src={ViteLogo} alt="Segun Adebayo" />
-            <Text>Vite + React + Tailwindcss</Text>
-          </Flex>
+          <Link to="/">
+            <Flex>
+              <Image mr={2} boxSize={5} src={ViteLogo} alt="Segun Adebayo" />
+              <Text>Vite + React + Tailwindcss</Text>
+            </Flex>
+          </Link>
         </NavItem>
         <Spacer />
         <NavItem>
